@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import {
-  View,
-  Text,
   StyleSheet,
+  Text,
   TextInput,
   TouchableOpacity,
+  View,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 

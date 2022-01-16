@@ -1,10 +1,10 @@
 import React from 'react';
 import {
-  View,
-  Text,
   StyleSheet,
-  TouchableOpacity,
+  Text,
   TextInput,
+  TouchableOpacity,
+  View,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 

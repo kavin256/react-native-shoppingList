@@ -44,7 +44,7 @@ const App = () => {
   };
 
   // Submit the users edits to the overall items state
-  const saveEditItem = (id, text) => {
+  const saveEditItem = id => {
     setItems(prevItems => {
       return prevItems.map(item =>
         item.id === editItemDetail.id ? {id, text: editItemDetail.text} : item,
@@ -74,7 +74,7 @@ const App = () => {
       );
     } else {
       setItems(prevItems => {
-        return [{id: uuid(), text}, ...prevItems];
+        return [{id: prevItems.length + 1, text}, ...prevItems];
       });
     }
   };
@@ -92,13 +92,13 @@ const App = () => {
     const isChecked = checkedItems.filter(checkedItem => checkedItem.id === id);
     isChecked.length
       ? // remove item from checked items state (uncheck)
-      checkedItemChange(prevItems => {
-        return [...prevItems.filter(item => item.id !== id)];
-      })
+        checkedItemChange(prevItems => {
+          return [...prevItems.filter(item => item.id !== id)];
+        })
       : // Add item to checked items state
-      checkedItemChange(prevItems => {
-        return [...prevItems.filter(item => item.id !== id), {id, text}];
-      });
+        checkedItemChange(prevItems => {
+          return [...prevItems.filter(item => item.id !== id), {id, text}];
+        });
   };
 
   return (
